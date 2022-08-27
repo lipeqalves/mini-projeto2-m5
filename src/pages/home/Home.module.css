@@ -1,0 +1,22 @@
+.container{
+    width: 50vw;
+    height: 70vh;
+    padding: 5em;
+    margin:auto;
+    margin-top: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #cfcad8;
+    border:1px solid #e1e1e1;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 10px;
+}
+
+.container img{
+    width: 50vw;
+    height: 60vh;
+    border:1px solid #e1e1e1;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 10px;
+}

@@ -1,0 +1,16 @@
+.footer {
+    background: #845EC2;
+    width: 100vw;
+    height: 45px;
+    padding: 8px 20px;
+    margin-top: 3.3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer p {
+    color: #FFF;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+  }
