@@ -1,34 +1,60 @@
 import { Tabela } from "../../components/tabela/Tabela";
 import styles from "./Cliente.module.css";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { CustomerProvider, CustomerContext } from "../../contexts/customer";
+
 
 export const Cliente = () => {
 
-  const [showTabela, setShowTabela] = useState(false)
-  const showOrHide = (bool) => {setShowTabela(bool)}
+  const { nome, sobrenome, email ,telefone} = useContext(CustomerContext)
+
+  const [showTabela, setShowTabela] = useState(false);
+  const showOrHide = (bool) => {
+    setShowTabela(bool);
+  };
 
   return (
+    
     <main className={styles.container}>
-    <p onClick={() =>{
-      console.log(showTabela)
-      !showTabela?showOrHide(true):showOrHide(false)
-    }} >Filipe Alves</p>
-      {showTabela? <Tabela
-        nome="Filipe"
-        sobreNome="Alves"
-        email="lipeqa@gmail.com"
-        telefone="81999999999"
-        cep="53530100"
-        rua="126"
-        numero="197"
-        bairro="caetes"
-        data="2804197"
-        cpf="123456789"
-        renda="10000000000"
-        prof="dev"
-      /> : null}
-
-     
+    
+      <p
+        onClick={() => {
+          console.log(showTabela);
+          !showTabela ? showOrHide(true) : showOrHide(false);
+        }}
+      >
+        Clientes
+      </p>
+      
+      {showTabela ? (
+        <div className={styles.container}>
+        
+          <Tabela
+            nome="Filipe"
+            sobrenome="Alves"
+            email="lipeqa@gmail.com"
+            telefone="81999999999"
+            cep="53530100"
+            rua="126"
+            numero="197"
+            bairro="caetes"
+            data="2804197"
+            cpf="123456789"
+            renda="10000000000"
+            prof="dev"
+          />
+          <CustomerProvider>
+            <Tabela
+              nome={nome}
+              sobrenome={sobrenome}
+              email={email}
+              telefone={telefone}
+            />
+          </CustomerProvider>
+        </div>
+      ) : null}
+      
     </main>
+    
   );
 };
