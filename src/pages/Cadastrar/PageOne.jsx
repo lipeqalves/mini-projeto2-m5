@@ -1,11 +1,11 @@
 import { Button } from "../../components/button/Button";
 import styles from "./PageOne.module.css";
 import { Link } from "react-router-dom";
-import { useState, useContext } from "react";
+import React, { useState, useContext } from "react";
 import { CustomerContext } from "../../contexts/customer";
 
 export const PageOne = () => {
-const   submit   = useContext(CustomerContext);
+const {submit} = useContext(CustomerContext);
 
   const [nome, setNome] = useState("");
   const [sobrenome, setSobrenome] = useState("");
@@ -13,7 +13,7 @@ const   submit   = useContext(CustomerContext);
   const [telefone, setTelefone] = useState("");
 
   const handleSubmit = () => {
-    console.log("dados", { nome, sobrenome, email, telefone });
+    //console.log("dados", { nome, sobrenome, email, telefone });
     submit({ nome, sobrenome, email, telefone});
   };
 
@@ -75,7 +75,7 @@ const   submit   = useContext(CustomerContext);
           </fieldset>
           <div className={styles.botao}>
             <Link to="" >
-              <Button type="submit" onClick={handleSubmit} label ="Próximo"/>
+              <Button onClick={handleSubmit} label ="Próximo"/>
             </Link>
           </div>
         </fieldset>

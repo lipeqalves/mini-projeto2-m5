@@ -9,7 +9,7 @@ export const CustomerProvider = ({ children }) => {
   const [telefone, setTelefone] = useState();
 
   const handleSubmit = ({ nome, sobrenome, email, telefone }) => {
-    console.log("dados customore", { nome, sobrenome, email, telefone });
+    //console.log("dados customore", { nome, sobrenome, email, telefone });
 
     setNome(nome);
     setSobrenome(sobrenome);

@@ -1,34 +1,28 @@
 import { Tabela } from "../../components/tabela/Tabela";
 import styles from "./Cliente.module.css";
 import { useContext, useState } from "react";
-import { CustomerProvider, CustomerContext } from "../../contexts/customer";
-
+import { CustomerContext } from "../../contexts/customer";
 
 export const Cliente = () => {
-
-  const { nome, sobrenome, email ,telefone} = useContext(CustomerContext)
-
+  const { nome, sobrenome, email, telefone } = useContext(CustomerContext);
+  //console.log("dados: clientes:", { nome, sobrenome, email ,telefone})
   const [showTabela, setShowTabela] = useState(false);
   const showOrHide = (bool) => {
     setShowTabela(bool);
   };
 
   return (
-    
     <main className={styles.container}>
-    
       <p
         onClick={() => {
-          console.log(showTabela);
+          //console.log(showTabela);
           !showTabela ? showOrHide(true) : showOrHide(false);
         }}
       >
         Clientes
       </p>
-      
       {showTabela ? (
         <div className={styles.container}>
-        
           <Tabela
             nome="Filipe"
             sobrenome="Alves"
@@ -43,18 +37,14 @@ export const Cliente = () => {
             renda="10000000000"
             prof="dev"
           />
-          <CustomerProvider>
-            <Tabela
-              nome={nome}
-              sobrenome={sobrenome}
-              email={email}
-              telefone={telefone}
-            />
-          </CustomerProvider>
+          <Tabela
+            nome={nome}
+            sobrenome={sobrenome}
+            email={email}
+            telefone={telefone}
+          />
         </div>
       ) : null}
-      
     </main>
-    
   );
 };
