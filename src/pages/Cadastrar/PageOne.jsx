@@ -13,7 +13,7 @@ const {submit} = useContext(CustomerContext);
   const [telefone, setTelefone] = useState("");
 
   const handleSubmit = () => {
-    //console.log("dados", { nome, sobrenome, email, telefone });
+    console.log("dados pageone", { nome, sobrenome, email, telefone });
     submit({ nome, sobrenome, email, telefone});
   };
 
@@ -74,7 +74,7 @@ const {submit} = useContext(CustomerContext);
             </div>
           </fieldset>
           <div className={styles.botao}>
-            <Link to="" >
+            <Link to="/pagetwo" >
               <Button onClick={handleSubmit} label ="Próximo"/>
             </Link>
           </div>

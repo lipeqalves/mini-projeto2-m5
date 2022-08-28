@@ -19,7 +19,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/pageone" element={<CustomerProvider><PageOne  /></CustomerProvider>} />
-        <Route path="/pagetwo" element={<PageTwo />} />
+        <Route path="/pagetwo" element={<CustomerProvider><PageTwo /></CustomerProvider>} />
         <Route path="/pagethree" element={<PageThree />} />
         <Route path="/cliente" element={<CustomerProvider><Cliente /></CustomerProvider>} />
       </Routes>
