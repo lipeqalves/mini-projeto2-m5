@@ -1,72 +1,83 @@
 import { Button } from "../../components/button/Button";
-import styles from "./PageOne.module.css"
-import { Tabela } from "../../components/tabela/Tabela"
+import styles from "./PageOne.module.css";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import React, { useState, useContext } from "react";
+import { CustomerContext } from "../../contexts/customer";
 
 export const PageOne = () => {
+const {submit} = useContext(CustomerContext);
 
-  const [nome, setNome] = useState()
-  const[sobreNome, setSobreNome] = useState()
-  const [email, setEmail] = useState()
-  const [telefone, setTelefone] = useState()
+  const [nome, setNome] = useState("");
+  const [sobrenome, setSobrenome] = useState("");
+  const [email, setEmail] = useState("");
+  const [telefone, setTelefone] = useState("");
 
-  const [cad, setCad] = useState([])
-
-  function cadastro(){
-    const newCad ={
-      nome:nome,
-      sobreNome:sobreNome,
-      email:email,
-      telefone:telefone,
-    }
-    setCad(preveState => [...preveState, newCad])
-  }
-  
+  const handleSubmit = () => {
+    //console.log("dados pageone", { nome, sobrenome, email, telefone });
+    submit({ nome, sobrenome, email, telefone});
+  };
 
   return (
     <main className={styles.container}>
-      <form action="#" method="post">
+      <form  >
         <fieldset>
           <fieldset className={styles.grupo}>
             <div className={styles.campo}>
               <label>Nome</label>
-              <input type="text" onChange={(e) => {
-                setNome(e.target.value)
-                //console.log(e.target.value)
-              }}/>
+              <input
+                type="text"
+                onChange={(e) => {
+                  setNome(e.target.value);
+                 // console.log(e.target.value)
+                }}
+              />
             </div>
             <div className={styles.campo}>
-              <label>Sobrenome</label>
-              <input type="text" onChange={(e) => {
-                setSobreNome(e.target.value)
-               // console.log(e.target.value)
-              }}/>
+              <label htmlFor="sobrenome">Sobrenome</label>
+              <input
+                type="text"
+                sobrenome="sobrenome"
+                id="sobrenome"
+                value={sobrenome}
+                onChange={(e) => {
+                  setSobrenome(e.target.value);
+                  // console.log(e.target.value)
+                }}
+              />
             </div>
-          
-          <div className={styles.campo}>
-            <label>E-mail</label>
-            <input type="text" onChange={(e) => {
-                setEmail(e.target.value)
-                //console.log(e.target.value)
-              }}/>
-          </div>
-          <div className={styles.campo}>
-            <label>Telefone</label>
-            <input type="text" onChange={(e) => {
-                setTelefone(e.target.value)
-               // console.log(e.target.value)
-              }}/>
-          </div>
+
+            <div className={styles.campo}>
+              <label htmlFor="email">E-mail</label>
+              <input
+                type="email"
+                email="email"
+                id="email"
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                  //console.log(e.target.value)
+                }}
+              />
+            </div>
+            <div className={styles.campo}>
+              <label htmlFor="telefone">Telefone</label>
+              <input
+                type="text"
+                telefone="telefone"
+                id="telefone"
+                value={telefone}
+                onChange={(e) => {
+                  setTelefone(e.target.value);
+                  // console.log(e.target.value)
+                }}
+              />
+            </div>
           </fieldset>
           <div className={styles.botao}>
-          <Link to="/pagetwo" onClick={(e) =>{
-            cadastro()
-          }}><Button label="Próximo"/></Link>
+            <Link to="/pagetwo" >
+              <Button onClick={handleSubmit} label ="Próximo"/>
+            </Link>
           </div>
-          {cad.map((cad, index) => (
-            <Tabela key={index} nome={cad.nome} sobreNome={cad.sobreNome} email={cad.email} telefone={cad.telefone}/>))}
-            
         </fieldset>
       </form>
     </main>

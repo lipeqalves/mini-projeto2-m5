@@ -23,17 +23,17 @@ export const Tabela = (props) => {
       </tr>
       <tr>
         <td>{props.nome}</td>
-        <td>{props.sobreNome}</td>
+        <td>{props.sobrenome}</td>
         <td>{props.email}</td>
         <td>{props.telefone}</td>
         <td>{props.cep}</td>
         <td>{props.rua}</td>
         <td>{props.bairro}</td>
         <td>{props.numero}</td>
-        <td>{props.data}</td>
+        <td>{props.dataNascimento}</td>
         <td>{props.cpf}</td>
         <td>{props.renda}</td>
-        <td>{props.prof}</td>
+        <td>{props.profissao}</td>
       </tr>
       </tbody>
       

@@ -1,5 +1,7 @@
 import styles from "./Home.module.css"
 import { Link } from "react-router-dom"
+import { PageOne } from "../Cadastrar/PageOne"
+
 
 
 export const Home = () => {
