@@ -15,7 +15,7 @@ export const PageTwo = () => {
   const [bairro, setBairro] = useState("");
 
   const handleSubmit = () => {
-    console.log("dados pagetwo", { nome, sobrenome, email, telefone, cep, rua, numero, bairro });
+    //console.log("dados pagetwo", { nome, sobrenome, email, telefone, cep, rua, numero, bairro });
     submit({ nome, sobrenome, email, telefone, cep, rua, numero, bairro });
   };
 
@@ -62,7 +62,7 @@ export const PageTwo = () => {
           </fieldset>
           <div className={styles.botao}>
           <Link to="/pageone"><Button label="Voltar"/></Link>
-          <Link to=""><Button label="Próximo" onClick={handleSubmit}/></Link>
+          <Link to="/pagethree"><Button label="Próximo" onClick={handleSubmit}/></Link>
           </div>
         </fieldset>
       </form>

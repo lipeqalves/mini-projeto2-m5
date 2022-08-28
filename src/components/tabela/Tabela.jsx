@@ -30,10 +30,10 @@ export const Tabela = (props) => {
         <td>{props.rua}</td>
         <td>{props.bairro}</td>
         <td>{props.numero}</td>
-        <td>{props.data}</td>
+        <td>{props.dataNascimento}</td>
         <td>{props.cpf}</td>
         <td>{props.renda}</td>
-        <td>{props.prof}</td>
+        <td>{props.profissao}</td>
       </tr>
       </tbody>
       

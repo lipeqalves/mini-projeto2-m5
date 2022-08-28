@@ -4,8 +4,12 @@ import { useContext, useState } from "react";
 import { CustomerContext } from "../../contexts/customer";
 
 export const Cliente = () => {
-  const { nome, sobrenome, email, telefone, cep, rua, numero, bairro} = useContext(CustomerContext);
-  //console.log("dados: clientes:", { nome, sobrenome, email ,telefone})
+  const { nome, sobrenome, email, telefone, 
+    cep, rua, numero, bairro, 
+    dataNascimento, cpf,renda,profissao} = useContext(CustomerContext);
+
+  //console.log("dados: clientes:", { nome, sobrenome, email, telefone,cep, rua, numero, bairro, dataNascimento, cpf,renda,profissao})
+  
   const [showTabela, setShowTabela] = useState(false);
   const showOrHide = (bool) => {
     setShowTabela(bool);
@@ -32,10 +36,10 @@ export const Cliente = () => {
             rua="126"
             numero="197"
             bairro="caetes"
-            data="2804197"
+            dataNascimento="2804197"
             cpf="123456789"
             renda="10000000000"
-            prof="dev"
+            profissao="dev"
           />
           <Tabela
             nome={nome}
@@ -46,6 +50,10 @@ export const Cliente = () => {
             rua={rua}
             numero={numero}
             bairro={bairro}
+            dataNascimento={dataNascimento}
+            cpf={cpf}
+            renda={renda}
+            profissao={profissao}
           />
         </div>
       ) : null}

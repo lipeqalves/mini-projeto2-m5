@@ -14,9 +14,16 @@ export const CustomerProvider = ({ children }) => {
   const [numero, setNumero] = useState('');
   const [bairro, setBairro] = useState('');
 
+  const [dataNascimento, setDataNascimento] = useState("");
+  const [cpf, setCpf] = useState("");
+  const [renda, setRenda] = useState("");
+  const [profissao, setProfissao] = useState("");
 
-  const handleSubmit = ({ nome, sobrenome, email, telefone, cep, rua, numero, bairro }) => {
-    console.log("dados customore", { nome, sobrenome, email, telefone, cep, rua, numero, bairro });
+  const handleSubmit = ({ nome, sobrenome, email, telefone, 
+    cep, rua, numero, bairro, 
+    dataNascimento, cpf,renda,profissao }) => {
+
+    //console.log("dados customore", { nome, sobrenome, email, telefone, cep, rua, numero, bairro,dataNascimento, cpf,renda,profissao});
 
     setNome(nome);
     setSobrenome(sobrenome);
@@ -27,10 +34,17 @@ export const CustomerProvider = ({ children }) => {
     setRua(rua);
     setNumero(numero);
     setBairro(bairro);
+
+    setDataNascimento(dataNascimento);
+    setCpf(cpf);
+    setRenda(renda);
+    setProfissao(profissao);
   };
   return (
     <CustomerContext.Provider
-      value={{ nome, sobrenome, email, telefone, cep, rua, numero, bairro, submit: handleSubmit }}
+      value={{ nome, sobrenome, email, telefone, 
+        cep, rua, numero, bairro, 
+        dataNascimento, cpf,renda,profissao, submit: handleSubmit }}
     >
       {children}
     </CustomerContext.Provider>

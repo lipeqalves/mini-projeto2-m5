@@ -13,7 +13,7 @@ const {submit} = useContext(CustomerContext);
   const [telefone, setTelefone] = useState("");
 
   const handleSubmit = () => {
-    console.log("dados pageone", { nome, sobrenome, email, telefone });
+    //console.log("dados pageone", { nome, sobrenome, email, telefone });
     submit({ nome, sobrenome, email, telefone});
   };
 
