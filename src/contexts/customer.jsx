@@ -1,15 +1,26 @@
-import { useState, createContext } from "react";
+import { useState, useEffect } from "react";
+
+import { createContext } from "react";
+import { Api } from "../service/Api";
 
 export const CustomerContext = createContext();
 
 export const CustomerProvider = ({ children }) => {
-  const [informacaoCadastro, setInformacaoCadastro] = useState({});
+  const [colaboradores, setColaboradores] = useState({});
+
   const handleInformacao = (info) => {
-    setInformacaoCadastro({ ...informacaoCadastro, ...info });
+    Api.post("colaboradores", {
+      ...info,
+    });
   };
 
+  useEffect(() => {
+    Api.get("/colaboradores").then((res) => {
+      setColaboradores(res.data);
+    });
+  }, []);
   return (
-    <CustomerContext.Provider value={{ handleInformacao, informacaoCadastro }}>
+    <CustomerContext.Provider value={{ handleInformacao, colaboradores }}>
       {children}
     </CustomerContext.Provider>
   );

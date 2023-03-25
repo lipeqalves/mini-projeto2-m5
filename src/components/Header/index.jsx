@@ -9,7 +9,7 @@ export const Header = () => {
         <h1 className={styles.home}>HOME</h1>
       </Link>
       <div className={styles.action}>
-        <Link to="/pageone">
+        <Link to="/cadastro">
           <Button name="Cadastrar" />
         </Link>
         <Link to="/cliente">

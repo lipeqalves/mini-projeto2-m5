@@ -1,9 +1,10 @@
-import styles from "./Input.module.css"
+import  { Wrapper} from "./styles.jsx"
+
 export const Input = ({ value, name, type, onChange,required=false }) => {
   return (
-    <div className={styles.campo}>
+    <Wrapper >
       <label htmlFor={name}>{name}</label>
-      <input id={name} value={value} type={type} onChange={onChange} required={required}/>
-    </div>
+      <input id={name} value={value} type={type} onChange={onChange} />
+    </Wrapper>
   );
 };

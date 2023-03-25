@@ -16,21 +16,6 @@
       "id": 1
     },
     {
-      "nome": "Filipe2",
-      "sobrenome": "Alve2s",
-      "email": "email2@emiil2.com",
-      "telefone": "819999999",
-      "cep": "1234567890",
-      "rua": "rua 128",
-      "numero": "123",
-      "bairro": "caetes1",
-      "dataNascimento": "28/05/1989",
-      "cpf": "1234568798",
-      "salario": "12345",
-      "cargo": "adm",
-      "id": 2
-    },
-    {
       "nome": "amanda",
       "sobrenome": "cristina",
       "email": "amandacristina@gmail.com",
@@ -43,7 +28,7 @@
       "cpf": "123456879",
       "salario": "4500",
       "cargo": "cientista de dados",
-      "id": 3
+      "id": 2
     }
   ]
 }

@@ -1,20 +1,15 @@
 import { Tabela } from "../../components/Tabela";
 import styles from "./Colaboradores.module.css";
-import { useEffect, useState } from "react";
+import {  useState, useContext } from "react";
+import { CustomerContext } from "../../contexts/customer";
 
-import { Api } from "../../service/Api";
 export const Colaboradores = () => {
-  const [colaboradores, setColaboradores] = useState({});
+
   const [showTabela, setShowTabela] = useState(false);
   const showOrHide = (bool) => {
     setShowTabela(bool);
   };
-
-  useEffect(() => {
-    Api.get("/colaboradores").then((res) => {
-      setColaboradores(res.data);
-    });
-  }, []);
+  const { colaboradores } = useContext(CustomerContext);
   return (
     <main className={styles.container}>
       <h1
