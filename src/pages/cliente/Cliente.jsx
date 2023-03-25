@@ -4,12 +4,8 @@ import { useContext, useState } from "react";
 import { CustomerContext } from "../../contexts/customer";
 
 export const Cliente = () => {
-  const { nome, sobrenome, email, telefone, 
-    cep, rua, numero, bairro, 
-    dataNascimento, cpf,renda,profissao} = useContext(CustomerContext);
+  const {informacaoCadastro} = useContext(CustomerContext);
 
-  //console.log("dados: clientes:", { nome, sobrenome, email, telefone,cep, rua, numero, bairro, dataNascimento, cpf,renda,profissao})
-  
   const [showTabela, setShowTabela] = useState(false);
   const showOrHide = (bool) => {
     setShowTabela(bool);
@@ -17,14 +13,13 @@ export const Cliente = () => {
 
   return (
     <main className={styles.container}>
-      <p
+      <h1
         onClick={() => {
-          //console.log(showTabela);
           !showTabela ? showOrHide(true) : showOrHide(false);
         }}
       >
-        Clientes
-      </p>
+      Clientes
+      </h1>
       {showTabela ? (
         <div className={styles.container}>
           <Tabela
@@ -42,18 +37,18 @@ export const Cliente = () => {
             profissao="dev"
           />
           <Tabela
-            nome={nome}
-            sobrenome={sobrenome}
-            email={email}
-            telefone={telefone}
-            cep={cep}
-            rua={rua}
-            numero={numero}
-            bairro={bairro}
-            dataNascimento={dataNascimento}
-            cpf={cpf}
-            renda={renda}
-            profissao={profissao}
+            nome={informacaoCadastro.nome}
+            sobrenome={informacaoCadastro.sobrenome}
+            email={informacaoCadastro.email}
+            telefone={informacaoCadastro.telefone}
+            cep={informacaoCadastro.cep}
+            rua={informacaoCadastro.rua}
+            numero={informacaoCadastro.numero}
+            bairro={informacaoCadastro.bairro}
+            dataNascimento={informacaoCadastro.dataNascimento}
+            cpf={informacaoCadastro.cpf}
+            renda={informacaoCadastro.renda}
+            profissao={informacaoCadastro.profissao}
           />
         </div>
       ) : null}
