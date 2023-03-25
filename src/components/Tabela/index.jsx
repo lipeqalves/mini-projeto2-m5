@@ -3,7 +3,7 @@ export const Tabela = (props) => {
     <table>
       <thead>
         <tr>
-          <th colSpan="4">Informações de Cadastro</th>
+          <th colSpan="4" > Informações do Colaborador  {props.nome}</th>
         </tr>
       </thead>
       <tbody>
@@ -18,8 +18,8 @@ export const Tabela = (props) => {
         <th>Numero</th>
         <th>Data Nascimento</th>
         <th>CPF</th>
-        <th>Renda Mensal</th>
-        <th>Profissão</th>
+        <th>Salario Mensal</th>
+        <th>Cargo</th>
       </tr>
       <tr>
         <td>{props.nome}</td>
@@ -32,8 +32,8 @@ export const Tabela = (props) => {
         <td>{props.numero}</td>
         <td>{props.dataNascimento}</td>
         <td>{props.cpf}</td>
-        <td>{props.renda}</td>
-        <td>{props.profissao}</td>
+        <td>{props.salario}</td>
+        <td>{props.cargo}</td>
       </tr>
       </tbody>
       

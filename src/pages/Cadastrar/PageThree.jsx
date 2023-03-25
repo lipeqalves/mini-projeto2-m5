@@ -4,17 +4,34 @@ import { Link } from "react-router-dom";
 import { useState, useContext } from "react";
 import { CustomerContext } from "../../contexts/customer";
 import { Input } from "../../components/Input";
+import { Api } from "../../service/Api";
 
 export const PageThree = () => {
-  const { handleInformacao } = useContext(CustomerContext);
+  const { handleInformacao, informacaoCadastro } = useContext(CustomerContext);
 
   const [dataNascimento, setDataNascimento] = useState("");
   const [cpf, setCpf] = useState("");
-  const [renda, setRenda] = useState("");
-  const [profissao, setProfissao] = useState("");
+  const [salario, setSalario] = useState("");
+  const [cargo, setCargo] = useState("");
 
   const handleSubmit = () => {
-    handleInformacao({ dataNascimento, cpf, renda, profissao });
+    handleInformacao({ dataNascimento, cpf, salario, cargo });
+    handleColaborador(informacaoCadastro, dataNascimento, cpf, salario, cargo);
+  };
+  const handleColaborador = (
+    informacao,
+    dataNascimento,
+    cpf,
+    salario,
+    cargo
+  ) => {
+    Api.post("colaboradores", {
+      ...informacao,
+      dataNascimento,
+      cpf,
+      salario,
+      cargo,
+    });
   };
 
   return (
@@ -39,19 +56,19 @@ export const PageThree = () => {
 
       <Input
         type="text"
-        name="Renda Mensal"
-        value={renda}
+        name="Salario Mensal"
+        value={salario}
         onChange={(e) => {
-          setRenda(e.target.value);
+          setSalario(e.target.value);
         }}
       />
 
       <Input
         type="text"
-        name="Profissão"
-        value={profissao}
+        name="cargo"
+        value={cargo}
         onChange={(e) => {
-          setProfissao(e.target.value);
+          setCargo(e.target.value);
         }}
         required={true}
       />
@@ -60,7 +77,7 @@ export const PageThree = () => {
         <Link to="/pagetwo">
           <Button name="Voltar" />
         </Link>
-        <Link to="/cliente">
+        <Link to="/">
           <Button name="Salvar" onClick={handleSubmit} type="submit" />
         </Link>
       </div>

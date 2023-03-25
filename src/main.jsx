@@ -7,12 +7,12 @@ import { PageOne } from "./pages/Cadastrar/PageOne";
 import { PageTwo } from "./pages/Cadastrar/PageTwo";
 import { PageThree } from "./pages/Cadastrar/PageThree";
 
-import { Cliente } from "./pages/cliente/Cliente";
 import { CustomerProvider } from "./contexts/customer";
 
 import "./styles/global.css";
 
 import { Layout } from "./components/Layout";
+import { Colaboradores } from "./pages/Colaboradores";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <CustomerProvider>
@@ -24,7 +24,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             <Route path="/pageone" element={<PageOne />} />
             <Route path="/pagetwo" element={<PageTwo />} />
             <Route path="/pagethree" element={<PageThree />} />
-            <Route path="/cliente" element={<Cliente />} />
+            <Route path="/cliente" element={<Colaboradores />} />
           </Routes>
         </Layout>
       </BrowserRouter>

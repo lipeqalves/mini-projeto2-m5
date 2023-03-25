@@ -13,7 +13,7 @@ export const Header = () => {
           <Button name="Cadastrar" />
         </Link>
         <Link to="/cliente">
-          <Button name="Cliente" />
+          <Button name="Colaboradores" />
         </Link>
       </div>
     </header>
