@@ -31,36 +31,6 @@
       "id": 2
     },
     {
-      "nome": "",
-      "sobrenome": "",
-      "email": "",
-      "telefone": "",
-      "cep": "",
-      "rua": "",
-      "numero": "",
-      "bairro": "",
-      "dataNascimento": "asdf",
-      "cpf": "sfasd",
-      "salario": "safs",
-      "cargo": "asfsd",
-      "id": 3
-    },
-    {
-      "nome": "sfds",
-      "sobrenome": "fsdf",
-      "email": "sdf",
-      "telefone": "fds",
-      "cep": "sdf",
-      "rua": "dsf",
-      "numero": "sdf",
-      "bairro": "sfd",
-      "dataNascimento": "sdf",
-      "cpf": "sdf",
-      "salario": "sdf",
-      "cargo": "sfd",
-      "id": 4
-    },
-    {
       "nome": "amanda",
       "sobrenome": "cristina",
       "email": "amandacristina@gmail.com",
@@ -73,22 +43,7 @@
       "cpf": "123456879",
       "salario": "4500",
       "cargo": "cientista de dados",
-      "id": 5
-    },
-    {
-      "nome": "",
-      "sobrenome": "",
-      "email": "",
-      "telefone": "",
-      "cep": "",
-      "rua": "",
-      "numero": "",
-      "bairro": "",
-      "dataNascimento": "",
-      "cpf": "",
-      "salario": "",
-      "cargo": "",
-      "id": 6
+      "id": 3
     }
   ]
 }

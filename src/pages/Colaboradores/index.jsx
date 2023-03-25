@@ -1,10 +1,9 @@
 import { Tabela } from "../../components/Tabela";
 import styles from "./Colaboradores.module.css";
-import { useContext, useEffect, useState } from "react";
-import { CustomerContext } from "../../contexts/customer";
+import { useEffect, useState } from "react";
+
 import { Api } from "../../service/Api";
 export const Colaboradores = () => {
-  const { informacaoCadastro } = useContext(CustomerContext);
   const [colaboradores, setColaboradores] = useState({});
   const [showTabela, setShowTabela] = useState(false);
   const showOrHide = (bool) => {
