@@ -1,50 +1,60 @@
-import { useState, createContext } from "react";
-
+import { useState, useEffect } from "react";
+import { createContext } from "react";
+import { Post, Delete, Get, GetId } from "../service/requisicao.js";
 export const CustomerContext = createContext();
 
 export const CustomerProvider = ({ children }) => {
+  const [colaboradores, setColaboradores] = useState([]);
+  const [colaborador, setColaborador] = useState([]);
 
-  const [nome, setNome] = useState('');
-  const [sobrenome, setSobrenome] = useState('');
-  const [email, setEmail] = useState('');
-  const [telefone, setTelefone] = useState('');
-
-  const [cep, setCep] = useState('');
-  const [rua, setRua] = useState('');
-  const [numero, setNumero] = useState('');
-  const [bairro, setBairro] = useState('');
-
-  const [dataNascimento, setDataNascimento] = useState("");
-  const [cpf, setCpf] = useState("");
-  const [renda, setRenda] = useState("");
-  const [profissao, setProfissao] = useState("");
-
-  const handleSubmit = ({ nome, sobrenome, email, telefone, 
-    cep, rua, numero, bairro, 
-    dataNascimento, cpf,renda,profissao }) => {
-
-    //console.log("dados customore", { nome, sobrenome, email, telefone, cep, rua, numero, bairro,dataNascimento, cpf,renda,profissao});
-
-    setNome(nome);
-    setSobrenome(sobrenome);
-    setEmail(email);
-    setTelefone(telefone);
-
-    setCep(cep);
-    setRua(rua);
-    setNumero(numero);
-    setBairro(bairro);
-
-    setDataNascimento(dataNascimento);
-    setCpf(cpf);
-    setRenda(renda);
-    setProfissao(profissao);
+  const handleInformacao = (info) => {
+    Post(info)
+      .then(mostrarColaborador())
+      .catch((e) => {
+        console.log(e);
+      });
   };
+  const buscarId = (id) => {
+    GetId(id)
+      .then((res) => {
+        console.log(res.data);
+        setColaborador(res.data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
+  const deletarId = (id) => {
+    Delete(id, colaboradores)
+      .then(mostrarColaborador())
+      .catch((e) => {
+        console.log(e);
+      });
+  };
+
+  const mostrarColaborador = () => {
+    Get()
+      .then((res) => {
+        setColaboradores(res.data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
+
+  useEffect(() => {
+    mostrarColaborador();
+  }, []);
+
   return (
     <CustomerContext.Provider
-      value={{ nome, sobrenome, email, telefone, 
-        cep, rua, numero, bairro, 
-        dataNascimento, cpf,renda,profissao, submit: handleSubmit }}
+      value={{
+        handleInformacao,
+        colaboradores,
+        buscarId,
+        deletarId,
+        colaborador,
+      }}
     >
       {children}
     </CustomerContext.Provider>

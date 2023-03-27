@@ -1,0 +1,49 @@
+{
+  "colaboradores": [
+    {
+      "nome": "Filipe",
+      "sobrenome": "Alves",
+      "email": "email@emiil.com",
+      "telefone": "819999999",
+      "cep": "1234567890",
+      "rua": "rua 128",
+      "numero": "123",
+      "bairro": "caetes",
+      "dataNascimento": "28/04/1989",
+      "cpf": "1234568798",
+      "salario": "12345",
+      "cargo": "dev",
+      "id": 1
+    },
+    {
+      "nome": "amanda",
+      "sobrenome": "cristina",
+      "email": "amandacristina@gmail.com",
+      "telefone": "81959263154",
+      "cep": "46789231",
+      "rua": "126",
+      "numero": "197",
+      "bairro": "caetes",
+      "dataNascimento": "01/05/1989",
+      "cpf": "123456879",
+      "salario": "4500",
+      "cargo": "cientista de dados",
+      "id": 2
+    },
+    {
+      "nome": "ewr",
+      "sobrenome": "ewrqwe",
+      "email": "ewrwe",
+      "telefone": "ewrew",
+      "dataNascimento": "ewr",
+      "cep": "ewrwe",
+      "rua": "erwe",
+      "numero": "ewrwe",
+      "bairro": "ewr",
+      "cpf": "ewr",
+      "salario": "ewr",
+      "cargo": "werew",
+      "id": 3
+    }
+  ]
+}
