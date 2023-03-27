@@ -12,7 +12,7 @@ export const Header = () => {
         <Link to="/cadastro">
           <Button name="Cadastrar" />
         </Link>
-        <Link to="/cliente">
+        <Link to="/colaboradores">
           <Button name="Colaboradores" />
         </Link>
       </div>

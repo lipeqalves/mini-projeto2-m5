@@ -7,6 +7,7 @@ import {createGlobalStyle} from "styled-components"
   padding: 0;
   outline: 0;
   box-sizing: border-box;
+  list-style: none;
   }
 
   border-style, input-security, button{
