@@ -29,6 +29,21 @@
       "salario": "4500",
       "cargo": "cientista de dados",
       "id": 2
+    },
+    {
+      "nome": "ewr",
+      "sobrenome": "ewrqwe",
+      "email": "ewrwe",
+      "telefone": "ewrew",
+      "dataNascimento": "ewr",
+      "cep": "ewrwe",
+      "rua": "erwe",
+      "numero": "ewrwe",
+      "bairro": "ewr",
+      "cpf": "ewr",
+      "salario": "ewr",
+      "cargo": "werew",
+      "id": 3
     }
   ]
 }
